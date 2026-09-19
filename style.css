@@ -1,0 +1,195 @@
+/* Website Profil Mahasiswa */
+
+:root {
+  --warna-utama: #0d6efd;
+  --warna-gelap: #1a1a2e;
+  --warna-aksen: #00b4d8;
+}
+
+* { font-family: 'Segoe UI', Tahoma, sans-serif; }
+
+body {
+  background: #f4f7fb;
+  scroll-behavior: smooth;
+}
+
+/* NAVBAR */
+.navbar {
+  background: linear-gradient(135deg, var(--warna-gelap), #16213e);
+  box-shadow: 0 4px 15px rgba(0,0,0,.25);
+}
+.navbar-brand { font-weight: 700; letter-spacing: 1px; }
+.nav-link:hover { color: var(--warna-aksen) !important; transform: translateY(-2px); transition: .3s; }
+
+/* HERO */
+.hero {
+  background: linear-gradient(135deg, #0d6efd 0%, #00b4d8 60%, #90e0ef 100%);
+  padding: 90px 0 130px;
+  position: relative;
+  overflow: hidden;
+}
+.hero::after {
+  content: '';
+  position: absolute;
+  bottom: -2px; left: 0;
+  width: 100%; height: 90px;
+  background: #f4f7fb;
+  clip-path: ellipse(75% 100% at 50% 100%);
+}
+.foto-profil {
+  width: 170px; height: 170px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 6px solid rgba(255,255,255,.85);
+  box-shadow: 0 10px 30px rgba(0,0,0,.3);
+  animation: muncul 1s ease;
+}
+@keyframes muncul {
+  from { opacity: 0; transform: translateY(30px) scale(.85); }
+  to   { opacity: 1; transform: translateY(0) scale(1); }
+}
+.badge-custom {
+  background: rgba(255,255,255,.2);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255,255,255,.4);
+  border-radius: 50rem;
+  padding: .5rem 1.2rem;
+  color: #fff;
+  font-weight: 500;
+  animation: muncul 1.2s ease;
+}
+
+/* ===== IKON KARTU ===== */
+.ikon-kartu {
+  width: 60px; height: 60px;
+  display: flex; align-items: center; justify-content: center;
+  border-radius: 15px;
+  font-size: 1.7rem;
+  margin: 0 auto 12px;
+  color: #fff;
+  /* gradient default agar kotak selalu terlihat */
+  background: linear-gradient(135deg, #0d6efd, #00b4d8);
+}
+.ikon-biru  { background: linear-gradient(135deg, #0d6efd, #4da3ff); }
+.ikon-cyan  { background: linear-gradient(135deg, #00b4d8, #90e0ef); }
+.ikon-hijau { background: linear-gradient(135deg, #198754, #43dea0); }
+
+/* Kartu Info */
+.kartu-info { margin-top: -70px; position: relative; z-index: 5; }
+.kartu-info .card {
+  border: none;
+  border-radius: 18px;
+  box-shadow: 0 12px 30px rgba(13,110,253,.15);
+  transition: transform .3s, box-shadow .3s;
+  overflow: hidden;
+}
+.kartu-info .card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 18px 40px rgba(13,110,253,.3);
+}
+.ikon-kartu {
+  width: 60px; height: 60px;
+  display: flex; align-items: center; justify-content: center;
+  border-radius: 15px;
+  font-size: 1.7rem;
+  margin: 0 auto 12px;
+  color: #fff;
+}
+
+/* JUDUL SECTION */
+.judul-section {
+  font-weight: 800;
+  position: relative;
+  display: inline-block;
+  margin-bottom: 2.5rem;
+}
+.judul-section::after {
+  content: '';
+  display: block;
+  width: 60%; height: 4px;
+  margin: 8px auto 0;
+  border-radius: 5px;
+  background: linear-gradient(90deg, var(--warna-utama), var(--warna-aksen));
+}
+
+/* TABEL */
+.tabel-custom {
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 10px 25px rgba(0,0,0,.08);
+  background: #fff;
+}
+.tabel-custom thead {
+  background: linear-gradient(135deg, var(--warna-utama), var(--warna-aksen));
+  color: #fff;
+}
+.tabel-custom thead th {
+  border: none !important;
+  padding: 1rem;
+  font-weight: 600;
+}
+.tabel-custom tbody td { padding: .9rem 1rem; vertical-align: middle; }
+.tabel-custom tbody tr { transition: background .25s; }
+.tabel-custom tbody tr:hover { background: #e7f1ff; }
+
+/* Bentuk lingkaran menggunakan badge nilai */
+.badge-nilai { 
+  width: 32px;
+  height: 32px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50% !important; 
+  padding: 0 !important; 
+  font-weight: 600; 
+  font-size: 0.85rem;
+}
+
+/* Nilai A = Biru (Menggunakan warna aksen tema agar senada) */
+.badge-nilai.bg-nilai-a {
+  background-color: #0d6efd !important;
+  color: #ffffff !important;
+}
+
+/* Nilai AB = Hijau */
+.badge-nilai.bg-nilai-ab {
+  background-color: #198754 !important; /* Warna hijau sukses standar */
+  color: #ffffff !important;
+}
+
+/* Nilai B = Kuning */
+.badge-nilai.bg-nilai-b {
+  background-color: #ffc107 !important; /* Warna kuning peringatan standar */
+  color: #1a1a2e !important; /* Teks gelap menggunakan --warna-gelap agar terbaca */
+}
+
+/* nilai IPK */
+.kartu-ipk {
+  background: linear-gradient(135deg, var(--warna-gelap), #16213e);
+  color: #fff;
+  border-radius: 18px;
+  box-shadow: 0 12px 30px rgba(0,0,0,.2);
+}
+.angka-ipk { font-size: 3.2rem; font-weight: 800; color: var(--warna-aksen); }
+.progress { height: 12px; border-radius: 10px; background: rgba(255,255,255,.15); }
+.progress-bar { border-radius: 10px; }
+
+/* FOOTER */
+footer {
+  background: linear-gradient(135deg, var(--warna-gelap), #16213e);
+  color: rgba(255,255,255,.75);
+}
+footer a { color: var(--warna-aksen); text-decoration: none; }
+footer a:hover { text-decoration: underline; }
+
+/* MODAL */
+.modal-content { border-radius: 18px; }
+.modal-header {
+  background: linear-gradient(135deg, #0d6efd, #00b4d8);
+  color: #fff;
+  border-radius: 18px 18px 0 0;
+}
+
+/* ANIMASI REVEAL */
+.reveal { opacity: 0; transform: translateY(40px); transition: all .8s ease; }
+.reveal.aktif { opacity: 1; transform: translateY(0); }

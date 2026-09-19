@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Profil Mahasiswa | Nama Anda</title>
+
+  <!-- Bootstrap CSS (LOCAL v5.3.8) -->
+  <link href="bootstrap-5.3.8-dist/bootstrap-5.3.8-dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap Icons (LOCAL) -->
+  <link href="bootstrap-icons-1.13.1/bootstrap-icons-1.13.1/bootstrap-icons.min.css" rel="stylesheet">
+  <!-- CSS EKSTERNAL (FILE SENDIRI) -->
+  <link href="style.css" rel="stylesheet">
+</head>
+<body>
+
+  <!-- ================= NAVBAR ================= -->
+  <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+    <div class="container">
+      <a class="navbar-brand" href="#beranda">
+        <i class="bi bi-mortarboard-fill me-2"></i>Profil Mahasiswa
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="menuNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link active" href="#beranda">Beranda</a></li>
+          <li class="nav-item"><a class="nav-link" href="#profil">Profil</a></li>
+          <li class="nav-item"><a class="nav-link" href="#nilai">Nilai Matakuliah</a></li>
+          <li class="nav-item"><a class="nav-link" href="#ipk">IPK</a></li>
+          <li class="nav-item">
+            <button class="btn btn-outline-info btn-sm ms-lg-3 mt-2 mt-lg-0" data-bs-toggle="modal" data-bs-target="#modalKontak">
+              <i class="bi bi-envelope me-1"></i>Kontak
+            </button>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <header class="hero text-center text-white" id="beranda">
+    <div class="container">
+      <img src="IMG_20260728_090150.jpg" alt="Foto Profil" class="foto-profil mb-3">
+      <h1 class="fw-bold display-5">Dafi Deo Ananda Nurrokhim</h1>
+      <p class="lead mb-3">NBI : 1482500040</p>
+      <span class="badge-custom d-inline-block me-2 mb-2">
+        <i class="bi bi-mortarboard me-1"></i> S1 Sistem dan Teknologi Informasi
+      </span>
+      <span class="badge-custom d-inline-block mb-2">
+        <i class="bi bi-building me-1"></i> Fakultas Teknologi Elektro dan Informatika Cerdas (FTEIC)
+      </span>
+    </div>
+  </header>
+
+  <!-- Kartu Info -->
+  <section class="kartu-info container" id="profil">
+    <div class="row g-4">
+      <div class="col-md-4 reveal">
+        <div class="card text-center p-4 h-100">
+          <div class="ikon-kartu ikon-biru">
+            <i class="bi bi-person-vcard"></i>
+          </div>
+          <h5 class="fw-bold">Nama & NBI</h5>
+          <p class="text-muted mb-0">Nama : <strong>Dafi Deo Ananda Nurrokhim</strong><br>NBI : <strong>1482500040</strong></p>
+        </div>
+      </div>
+      <div class="col-md-4 reveal">
+        <div class="card text-center p-4 h-100">
+          <div class="ikon-kartu ikon-cyan">
+            <i class="bi bi-journal-bookmark"></i>
+          </div>
+          <h5 class="fw-bold">Program Studi</h5>
+          <p class="text-muted mb-0">S1 <strong>Sistem dan Teknologi Informasi</strong><br>Universitas 17 Agustus 1945 Surabaya</p>
+        </div>
+      </div>
+      <div class="col-md-4 reveal">
+        <div class="card text-center p-4 h-100">
+          <div class="ikon-kartu ikon-hijau">
+            <i class="bi bi-award"></i>
+          </div>
+          <h5 class="fw-bold">Prestasi Akademik</h5>
+          <p class="text-muted mb-0">IPK Kumulatif : <strong>3.42</strong><br>Predikat : <strong>Sangat Memuaskan</strong></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- NILAI MATAKULIAH -->
+  <section class="container py-5" id="nilai">
+    <div class="text-center reveal">
+      <h2 class="judul-section">Nilai Matakuliah</h2>
+    </div>
+    <div class="row justify-content-center reveal">
+      <div class="col-lg-10">
+        <div class="tabel-custom table-responsive">
+          <table class="table table-striped table-hover align-middle mb-0">
+            <thead>
+              <tr class="text-center">
+                <th>No</th>
+                <th>Kode MK</th>
+                <th>Nama Matakuliah</th>
+                <th>SKS</th>
+                <th>Nilai Huruf</th>
+                <th>Bobot</th>
+              </tr>
+            </thead>
+            <tbody class="text-center">
+              <tr>
+                <td>1</td><td>14823372</td><td class="text-start">STATISTIKA DAN PROBABILITAS</td>
+                <td>2</td><td><span class="badge badge-nilai bg-nilai-ab">AB</span></td><td>3.50</td>
+              </tr>
+              <tr>
+                <td>2</td><td>SIF102</td><td class="text-start">PEMROGRAMAN BERORIENTASI OBJEK</td>
+                <td>4</td><td><span class="badge badge-nilai bg-nilai-a">A</span></td><td>4.00</td>
+              </tr>
+              <tr>
+                <td>3</td><td>SIF103</td><td class="text-start">INTERAKSI MANUSIA KOMPUTER</td>
+                <td>3</td><td><span class="badge badge-nilai bg-nilai-ab">AB</span></td><td>3.50</td>
+              </tr>
+              <tr>
+                <td>4</td><td>SIF104</td><td class="text-start">ALGORITMA DAN STRUKTUR DATA</td>
+                <td>3</td><td><span class="badge badge-nilai bg-nilai-ab">AB</span></td><td>3.50</td>
+              </tr>
+              <tr>
+                <td>5</td><td>SIF105</td><td class="text-start">TEKNOLOGI INFORMASI DAN APLIKASI BISNIS BERKEMBANG</td>
+                <td>3</td><td><span class="badge badge-nilai bg-nilai-ab">AB</span></td><td>3.50</td>
+              </tr>
+              <tr>
+                <td>6</td><td>SIF106</td><td class="text-start">SISTEM BASIS DATA</td>
+                <td>2</td><td><span class="badge badge-nilai bg-nilai-b">B</span></td><td>3.00</td>
+              </tr>
+              <tr>
+                <td>7</td><td>SIF106</td><td class="text-start">ARSITEKTUR DAN ORGANISASI KOMPUTER</td>
+                <td>3</td><td><span class="badge badge-nilai bg-nilai-ab">AB</span></td><td>3.50</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+</section>
+
+  <!-- Nilai IPK -->
+  <section class="container py-5" id="ipk">
+    <div class="text-center reveal">
+      <h2 class="judul-section">Indeks Prestasi Kumulatif (IPK)</h2>
+    </div>
+    <div class="row g-4 justify-content-center reveal">
+      <div class="col-lg-4">
+        <div class="kartu-ipk text-center p-5 h-100">
+          <i class="bi bi-graph-up-arrow fs-1 mb-2"></i>
+          <p class="mb-0 opacity-75">IPK Saat Ini</p>
+          <div class="angka-ipk">3.42</div>
+          <div class="progress mb-2">
+            <div class="progress-bar bg-info" style="width: 86%;"></div>
+          </div>
+          <small class="opacity-75">Skala 0.00 - 4.00</small>
+        </div>
+      </div>
+      <div class="col-lg-7">
+        <div class="tabel-custom table-responsive">
+          <table class="table table-striped table-hover text-center mb-0">
+            <thead>
+              <tr>
+                <th>Semester</th>
+                <th>SKS Diambil</th>
+                <th>IP Semester</th>
+                <th>IPK Kumulatif</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>Semester 1</td><td>18</td><td>3.31</td><td>3.31</td></tr>
+              <tr><td>Semester 2</td><td>20</td><td>3.53</td><td>3.42</td></tr>
+              <tr class="table-info fw-bold"><td>Semester 3</td><td>23</td><td>-</td><td>3.42</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="text-center py-4 mt-4">
+    <p class="mb-1">© 2026 — Dibuat dengan <i class="bi bi-bootstrap-fill" style="color:#7952b3;"></i> Bootstrap 5.3.8</p>
+    <small>Ikuti saya :
+      <a href="https://www.instagram.com/_dafideoyy_?stkn=MTkxdW81NmdhdWRlbg=="><i class="bi bi-instagram ms-1"></i></a>
+      <a href="https://github.com/DafiDeo"><i class="bi bi-github ms-2"></i></a>
+    </small>
+  </footer>
+
+  <!-- MODAL KONTAK -->
+  <div class="modal fade" id="modalKontak" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title"><i class="bi bi-envelope-paper me-2"></i>Hubungi Saya</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body p-4">
+          <div class="mb-3">
+            <label class="form-label fw-semibold">Nama</label>
+            <input type="text" class="form-control" placeholder="masukkan nama">
+          </div>
+          <div class="mb-3">
+            <label class="form-label fw-semibold">Email</label>
+            <input type="email" class="form-control" placeholder="name@example.com">
+          </div>
+          <div class="mb-3">
+            <label class="form-label fw-semibold">Pesan</label>
+            <textarea class="form-control" rows="3" placeholder="tulis pesan..."></textarea>
+          </div>
+        </div>
+        <div class="modal-footer border-0">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
+          <button type="button" class="btn btn-primary"><i class="bi bi-send me-1"></i>Kirim</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap JS (LOCAL v5.3.8) -->
+  <script src="bootstrap-5.3.8-dist/bootstrap-5.3.8-dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Script animasi reveal -->
+  <script>
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('aktif'); });
+    }, { threshold: 0.15 });
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>
