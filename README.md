@@ -18,6 +18,10 @@ Tujuan dari project ini adalah mempelajari bagaimana membuat halaman web yang me
 
 ---
 
+Website dapat dijalankan melalui **GitHub Pages**:
+
+👉 [Buka Demo Website](https://dafideo.github.io/buat-website-tentang-profile-data-diri-dengan-menggunakan-framework-bootstrap/Profile_Data_Diri.html)
+
 ## 🛠️ Teknologi yang Digunakan
 
 | Teknologi | Kegunaan |
