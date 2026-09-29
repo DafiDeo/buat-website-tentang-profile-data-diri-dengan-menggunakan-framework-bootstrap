@@ -22,9 +22,9 @@ Website dapat dijalankan melalui **GitHub Pages**:
 
 👉 [Buka Demo Website](https://dafideo.github.io/buat-website-tentang-profile-data-diri-dengan-menggunakan-framework-bootstrap/Profile_Data_Diri.html)
 
-## 🛠️ Teknologi yang Digunakan
+## 🛠️ Pemograman yang Digunakan
 
-| Teknologi | Kegunaan |
+| Pemograman | Kegunaan |
 |---|---|
 | 🟧 HTML5 | Membuat struktur halaman |
 | 🎨 CSS3 | Mengatur dan menyesuaikan tampilan |
