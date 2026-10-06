@@ -193,3 +193,37 @@ footer a:hover { text-decoration: underline; }
 /* ANIMASI REVEAL */
 .reveal { opacity: 0; transform: translateY(40px); transition: all .8s ease; }
 .reveal.aktif { opacity: 1; transform: translateY(0); }
+
+/* Mode gelap — diaktifkan lewat body.classList.toggle('dark-mode') */
+body.dark-mode {
+  background: #0f1123;
+  color: #e4e6f0;
+  transition: background .4s ease, color .4s ease;
+}
+body.dark-mode .hero::after { background: #0f1123; }
+body.dark-mode .navbar,
+body.dark-mode footer,
+body.dark-mode .kartu-ipk {
+  background: linear-gradient(135deg, #05060f, #101426);
+}
+body.dark-mode .card,
+body.dark-mode .tabel-custom,
+body.dark-mode .modal-content {
+  background: #1b1e33;
+  color: #e4e6f0;
+}
+body.dark-mode .text-muted { color: #a0a5c0 !important; }
+body.dark-mode .table {
+  --bs-table-bg: transparent;
+  --bs-table-striped-bg: #20243d;
+  --bs-table-color: #e4e6f0;
+}
+body.dark-mode .tabel-custom tbody tr:hover { background: #262a47; }
+body.dark-mode .form-control,
+body.dark-mode .form-select,
+body.dark-mode .input-group-text {
+  background: #262a47;
+  border-color: #3a3f63;
+  color: #e4e6f0;
+}
+body.dark-mode .form-control::placeholder { color: #7d83a6; }
