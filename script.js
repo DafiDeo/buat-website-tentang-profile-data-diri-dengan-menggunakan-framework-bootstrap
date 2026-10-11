@@ -157,6 +157,32 @@ function terapkanFilter() {
 inputCari.addEventListener("input", terapkanFilter);   // Interaksi 1
 pilihNilai.addEventListener("change", terapkanFilter); // Interaksi 2
 
+/* FITUR JQUERY 1 : hapus baris dengan efek fadeOut */
+ $("#isiTabelNilai").on("click", ".btn-hapus", function () {
+  const idHapus = Number($(this).data("id"));
+  const baris   = $(this).closest("tr"); // traversing: cari <tr> terdekat
+
+  baris.fadeOut(300, function () {
+    const idx = dataMatakuliah.findIndex(function (mk) {
+      return mk.id === idHapus;
+    });
+    if (idx !== -1) dataMatakuliah.splice(idx, 1); // hapus dari array
+    renderTabel(dataMatakuliah);                    // render ulang tabel
+  });
+});
+
+/* FITUR JQUERY 2 : pesan sukses dengan chaining fadeIn -> delay -> fadeOut */
+function tampilPesanSukses() {
+  $("#pesanSukses")
+    .removeClass("d-none")
+    .hide()
+    .fadeIn(300)
+    .delay(2500)
+    .fadeOut(400, function () {
+      $("#pesanSukses").addClass("d-none");
+    });
+}
+
 // Interaksi 3 : toggle mode gelap (classList, bukan style inline)
 const tombolMode = document.getElementById("tombolMode");
 if (tombolMode) { // pengaman: tidak crash jika tombol dihapus dari HTML
@@ -195,6 +221,7 @@ formTambah.addEventListener("submit", function (event) {
   const bobotBaru = fNilai.value === "A" ? 4.00 : (fNilai.value === "AB" ? 3.50 : 3.00);
 
   dataMatakuliah.push({
+    id   : idBerikutnya++,
     kode : fKode.value.trim().toUpperCase(),
     nama : fNama.value.trim().toUpperCase(),
     sks  : sksBaru,
@@ -207,9 +234,7 @@ formTambah.addEventListener("submit", function (event) {
   pilihNilai.value = "semua";
   renderTabel(dataMatakuliah);
 
-  const pesan = document.getElementById("pesanSukses");
-  pesan.classList.remove("d-none");
-  setTimeout(function () { pesan.classList.add("d-none"); }, 3000);
+  tampilPesanSukses(); // jQuery chaining
 });
 
 // Form modal kontak (opsional, ada pengaman)
