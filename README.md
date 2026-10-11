@@ -32,8 +32,8 @@ Project/
 ├── Profile_Data_Diri.html
 ├── style.css
 ├── script.js
-├── bootstrap-5.3.8-dist.zip
-└── bootstrap-icons-1.13.1.zip
+├── bootstrap-5.3.8-dist.
+└── bootstrap-icons-1.13.1
 ```
 
 ## ✨ Fitur Website
