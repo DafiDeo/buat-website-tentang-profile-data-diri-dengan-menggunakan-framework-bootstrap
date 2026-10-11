@@ -12,7 +12,7 @@ Dimulai dari membuat halaman web yang terstruktur, responsif, dan menarik dengan
 
 Website dapat dijalankan melalui GitHub Pages.
 
-👉 **Buka Demo Website:** [Klik di sini](https://dafideo.github.io/buat-website-tentang-profile-data-diri-dengan-menggunakan-framework-bootstrap/)
+👉 **Buka Demo Website:** [Klik di sini](https://dafideo.github.io/buat-website-tentang-profile-data-diri-dengan-menggunakan-framework-bootstrap/Profile_Data_Diri.html)
 
 ## 🛠️ Teknologi yang Digunakan
 
