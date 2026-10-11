@@ -1,4 +1,4 @@
-/* ==================== BAGIAN 1 ==================== */
+/*  BAGIAN 1  */
 
 // (1) Array of object : data matakuliah
 const dataMatakuliah = [
@@ -62,7 +62,7 @@ console.log("Total SKS :", hitungTotalSks(dataMatakuliah));
 console.log("IP        :", hitungIP(dataMatakuliah).toFixed(2));
 console.log("Predikat  :", tentukanPredikat(hitungIP(dataMatakuliah)));
 
-/* ==================== BAGIAN 2 : DOM ==================== */
+/*  BAGIAN 2 : DOM  */
 
  // $(function(){}) = document ready : kode dijalankan setelah DOM siap (materi jQuery)
 $(function () { 
@@ -159,8 +159,22 @@ pilihNilai.addEventListener("change", terapkanFilter); // Interaksi 2
 
 /* FITUR JQUERY 1 : hapus baris dengan efek fadeOut */
  $("#isiTabelNilai").on("click", ".btn-hapus", function () {
+  // tampilkan dialog konfirmasi sebelum menghapus
+  const yakin = confirm("Apakah kamu yakin ingin menghapus mata kuliah ini?");
+  // batalkan jika user menekan Cancel
+  if (!yakin) return;
+
   const idHapus = Number($(this).data("id"));
   const baris   = $(this).closest("tr"); // traversing: cari <tr> terdekat
+
+  baris.fadeOut(300, function () {
+    const idx = dataMatakuliah.findIndex(function (mk) {
+      return mk.id === idHapus;
+    });
+    if (idx !== -1) dataMatakuliah.splice(idx, 1); // hapus dari array
+    renderTabel(dataMatakuliah);                    // render ulang tabel
+  });
+});
 
   baris.fadeOut(300, function () {
     const idx = dataMatakuliah.findIndex(function (mk) {
@@ -283,4 +297,3 @@ document.querySelectorAll(".reveal").forEach(function (el) { observer.observe(el
 // Karena isinya sama persis, tampilan tabel tetap menampilkan semua nilai.
 renderTabel(dataMatakuliah);
 renderSemester();
-});
