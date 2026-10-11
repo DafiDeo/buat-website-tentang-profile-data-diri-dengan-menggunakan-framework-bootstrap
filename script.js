@@ -2,14 +2,17 @@
 
 // (1) Array of object : data matakuliah
 const dataMatakuliah = [
-  { kode: "14823372", nama: "STATISTIKA DAN PROBABILITAS",    sks: 2, nilai: "AB", bobot: 3.50 },
-  { kode: "SIF102",   nama: "PEMROGRAMAN BERORIENTASI OBJEK", sks: 4, nilai: "A",  bobot: 4.00 },
-  { kode: "SIF103",   nama: "INTERAKSI MANUSIA KOMPUTER",     sks: 3, nilai: "AB", bobot: 3.50 },
-  { kode: "SIF104",   nama: "ALGORITMA DAN STRUKTUR DATA",    sks: 3, nilai: "AB", bobot: 3.50 },
-  { kode: "SIF105",   nama: "TEKNOLOGI INFORMASI DAN APLIKASI BISNIS BERKEMBANG", sks: 3, nilai: "AB", bobot: 3.50 },
-  { kode: "SIF106",   nama: "SISTEM BASIS DATA",              sks: 2, nilai: "B",  bobot: 3.00 },
-  { kode: "SIF106",   nama: "ARSITEKTUR DAN ORGANISASI KOMPUTER", sks: 3, nilai: "AB", bobot: 3.50 }
+  { id: 1, kode: "14823372", nama: "STATISTIKA DAN PROBABILITAS",    sks: 2, nilai: "AB", bobot: 3.50 },
+  { id: 2, kode: "SIF102",   nama: "PEMROGRAMAN BERORIENTASI OBJEK", sks: 4, nilai: "A",  bobot: 4.00 },
+  { id: 3, kode: "SIF103",   nama: "INTERAKSI MANUSIA KOMPUTER",     sks: 3, nilai: "AB", bobot: 3.50 },
+  { id: 4, kode: "SIF104",   nama: "ALGORITMA DAN STRUKTUR DATA",    sks: 3, nilai: "AB", bobot: 3.50 },
+  { id: 5, kode: "SIF105",   nama: "TEKNOLOGI INFORMASI DAN APLIKASI BISNIS BERKEMBANG", sks: 3, nilai: "AB", bobot: 3.50 },
+  { id: 6, kode: "SIF106",   nama: "SISTEM BASIS DATA",              sks: 2, nilai: "B",  bobot: 3.00 },
+  { id: 7, kode: "SIF106",   nama: "ARSITEKTUR DAN ORGANISASI KOMPUTER", sks: 3, nilai: "AB", bobot: 3.50 }
 ];
+
+// id berikutnya untuk data baru hasil form tambah
+let idBerikutnya = 8;
 
 // Array of object : rekap semester
 const dataSemester = [
@@ -61,6 +64,8 @@ console.log("Predikat  :", tentukanPredikat(hitungIP(dataMatakuliah)));
 
 /* ==================== BAGIAN 2 : DOM ==================== */
 
+ // $(function(){}) = document ready : kode dijalankan setelah DOM siap (materi jQuery)
+$(function () { 
 const warnaBadge = { "A": "bg-nilai-a", "AB": "bg-nilai-ab", "B": "bg-nilai-b" };
 
 // (1) Render tabel dengan createElement
@@ -71,7 +76,7 @@ function renderTabel(daftar) {
   if (daftar.length === 0) {
     const tr = document.createElement("tr");
     const td = document.createElement("td");
-    td.colSpan = 6;
+    td.colSpan = 7;
     td.className = "text-center text-muted py-4";
     td.textContent = "Matakuliah tidak ditemukan.";
     tr.appendChild(td);
@@ -102,7 +107,15 @@ function renderTabel(daftar) {
       const tdBobot = document.createElement("td");
       tdBobot.textContent = mk.bobot.toFixed(2);
 
-      tr.append(tdNo, tdKode, tdNama, tdSks, tdNilai, tdBobot);
+      const tdAksi = document.createElement("td");
+      const btnHapus = document.createElement("button");
+      btnHapus.className = "btn btn-outline-danger btn-sm btn-hapus";
+      btnHapus.dataset.id = mk.id;
+      btnHapus.title = "Hapus matakuliah";
+      btnHapus.innerHTML = '<i class="bi bi-trash"></i>';
+      tdAksi.appendChild(btnHapus);
+
+      tr.append(tdNo, tdKode, tdNama, tdSks, tdNilai, tdBobot, tdAksi);
       tbody.appendChild(tr);
     });
   }
@@ -245,3 +258,4 @@ document.querySelectorAll(".reveal").forEach(function (el) { observer.observe(el
 // Karena isinya sama persis, tampilan tabel tetap menampilkan semua nilai.
 renderTabel(dataMatakuliah);
 renderSemester();
+});
