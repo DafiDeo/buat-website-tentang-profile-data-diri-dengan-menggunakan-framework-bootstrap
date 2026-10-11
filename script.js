@@ -166,7 +166,7 @@ pilihNilai.addEventListener("change", terapkanFilter); // Interaksi 2
   if (!yakin) return;
 
   const idHapus = Number($(this).data("id"));
-  const baris   = $(this).closest("tr"); // traversing: cari <tr> terdekat
+  const baris   = $(this).closest("tr"); 
 
   baris.fadeOut(300, function () {
     const idx = dataMatakuliah.findIndex(function (mk) {
