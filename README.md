@@ -80,6 +80,7 @@ Project/
 4. Coba fitur pencarian mata kuliah, filter nilai, tambah dan hapus mata kuliah, serta pergantian mode gelap.
 
 
+
 <div align="center">
 
 © 2026 — **Dafi Deo Ananda Nurrokhim** · NBI 1482500040
